@@ -8,8 +8,8 @@ const sequelize = new Sequelize('nome_do_banco', 'nome_do_usuario', 'senha', {
   port: 1433, // Porta padrão do MS SQL Server
   dialectOptions: {
     options: {
-      encrypt: true, // Para conexões seguras (recomendado)
-      trustServerCertificate: true, // Se estiver usando um certificado autoassinado
+      encrypt: false, // Para conexões seguras (recomendado)
+      trustServerCertificate: false, // Se estiver usando um certificado autoassinado
     },
   },
 });
