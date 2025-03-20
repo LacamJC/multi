@@ -20,5 +20,5 @@ sequelize
     console.log('Conexão com o MS SQL Server estabelecida com sucesso.');
   })
   .catch((err) => {
-    console.error('Erro ao conectar com o MS SQL Server:', err);
+    console.error('Erro ao conectar com o MS SQL Server:', err.message);
   });
