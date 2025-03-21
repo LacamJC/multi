@@ -19,6 +19,7 @@ exports.getData = () => {
 
         data.forEach((registro) => {
             valor += registro.valorHora * registro.esforco
+            console.log(`A pagar para analista: ${registro.valorHora * registro.esforco}`)
         })
 
         return valor
@@ -29,16 +30,18 @@ exports.getData = () => {
         let valor_dev = 0
 
         data.forEach((registro) => {
+            // console.log(registro)
             if (registro.tipoTarefa == "S") {
 
                 if (registro.fatura == "1") {
                     valor += (registro.esforco * registro.valorA1)
-                    // console.log(registro.esforco * registro.valorA1)
+                   
 
                 }
             } else {
                 if (registro.fatura == "1") {
-                    valor_dev += (registro.esforco * registro.horasDesenvolvimentoA1)
+                    valor_dev += (registro.esforco * registro.valorA1)
+                    console.log(`A pagasr: ${registro.esforco * registro.valorA1}`)
                     // console.log(registro)
                     // console.log(`
                     //         ${valor_dev.toFixed(2)}
@@ -50,8 +53,8 @@ exports.getData = () => {
         // return valor + valor_dev
 
         return {
-            desenvolvimento : valor_dev,
-            suporte: valor,
+            // desenvolvimento : valor_dev,
+            // suporte: valor,
             total : valor_dev + valor}
 
     }
