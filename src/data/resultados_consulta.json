@@ -9,7 +9,7 @@
     "ZAD_TIPO": "D",
     "ZAD_DTINI": "20241003",
     "ZAD_DTFIM": "20241003",
-    "ZAD_ESFOR": "08:00",
+    "ZAD_ESFOR": "08:30",
     "ZAD_NOMCLI": "VIACAO GARCIA LTDA                      ",
     "ZAA_COD": "000009",
     "ZAA_NOME": "Matheus Emanoel Candido de Jesus                  ",
@@ -556,7 +556,7 @@
     "ZAA_VALHOR": 0,
     "A1_VALOR": 90,
     "A1_HRDEV": 90,
-    "ZAC_FATURA": "2",
+    "ZAC_FATURA": "1",
     "A1_PARCEIR": " "
   },
   {
@@ -576,7 +576,7 @@
     "ZAA_VALHOR": 0,
     "A1_VALOR": 90,
     "A1_HRDEV": 90,
-    "ZAC_FATURA": "2",
+    "ZAC_FATURA": "1",
     "A1_PARCEIR": " "
   },
   {
