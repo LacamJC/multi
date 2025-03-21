@@ -10,3 +10,171 @@
 
 ::ffff:127.0.0.1 - - [21/Mar/2025:19:12:26 +0000] "GET /metrica HTTP/1.1" 200 118 - 2.575 ms 
 
+::ffff:127.0.0.1 - - [21/Mar/2025:19:17:05 +0000] "GET /metrica HTTP/1.1" 200 118 - 11.680 ms 
+
+::1 - - [21/Mar/2025:19:20:28 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.735 ms 
+
+::1 - - [21/Mar/2025:19:20:28 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.215 ms 
+
+::1 - - [21/Mar/2025:19:20:28 +0000] "GET /metrica HTTP/1.1" 200 118 - 1.780 ms 
+
+::1 - - [21/Mar/2025:19:20:28 +0000] "GET /metrica HTTP/1.1" 304 - - 1.703 ms 
+
+::1 - - [21/Mar/2025:19:20:35 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.244 ms 
+
+::1 - - [21/Mar/2025:19:20:35 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.225 ms 
+
+::1 - - [21/Mar/2025:19:20:35 +0000] "GET /metrica HTTP/1.1" 304 - - 1.574 ms 
+
+::1 - - [21/Mar/2025:19:20:35 +0000] "GET /metrica HTTP/1.1" 304 - - 1.926 ms 
+
+::1 - - [21/Mar/2025:19:20:38 +0000] "GET /metrica HTTP/1.1" 304 - - 1.561 ms 
+
+::1 - - [21/Mar/2025:19:20:38 +0000] "GET /metrica HTTP/1.1" 304 - - 2.904 ms 
+
+::1 - - [21/Mar/2025:19:20:52 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.232 ms 
+
+::1 - - [21/Mar/2025:19:20:52 +0000] "GET /metrica HTTP/1.1" 304 - - 2.295 ms 
+
+::1 - - [21/Mar/2025:19:20:52 +0000] "GET /metrica HTTP/1.1" 304 - - 2.530 ms 
+
+::1 - - [21/Mar/2025:19:21:14 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.184 ms 
+
+::1 - - [21/Mar/2025:19:21:14 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.215 ms 
+
+::1 - - [21/Mar/2025:19:21:14 +0000] "GET /metrica HTTP/1.1" 304 - - 3.116 ms 
+
+::1 - - [21/Mar/2025:19:21:14 +0000] "GET /metrica HTTP/1.1" 304 - - 1.805 ms 
+
+::1 - - [21/Mar/2025:19:22:00 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.264 ms 
+
+::1 - - [21/Mar/2025:19:22:00 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.253 ms 
+
+::1 - - [21/Mar/2025:19:22:00 +0000] "GET /metrica HTTP/1.1" 304 - - 1.535 ms 
+
+::1 - - [21/Mar/2025:19:22:00 +0000] "GET /metrica HTTP/1.1" 304 - - 2.282 ms 
+
+::1 - - [21/Mar/2025:19:24:04 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.258 ms 
+
+::1 - - [21/Mar/2025:19:24:04 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.277 ms 
+
+::1 - - [21/Mar/2025:19:24:04 +0000] "GET /metrica HTTP/1.1" 304 - - 1.457 ms 
+
+::1 - - [21/Mar/2025:19:24:04 +0000] "GET /metrica HTTP/1.1" 304 - - 1.180 ms 
+
+::1 - - [21/Mar/2025:19:24:37 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.185 ms 
+
+::1 - - [21/Mar/2025:19:24:37 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.144 ms 
+
+::1 - - [21/Mar/2025:19:24:37 +0000] "GET /metrica HTTP/1.1" 304 - - 1.465 ms 
+
+::1 - - [21/Mar/2025:19:24:37 +0000] "GET /metrica HTTP/1.1" 304 - - 1.204 ms 
+
+::1 - - [21/Mar/2025:19:24:42 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.238 ms 
+
+::1 - - [21/Mar/2025:19:24:42 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.186 ms 
+
+::1 - - [21/Mar/2025:19:24:42 +0000] "GET /metrica HTTP/1.1" 304 - - 1.405 ms 
+
+::1 - - [21/Mar/2025:19:24:42 +0000] "GET /metrica HTTP/1.1" 304 - - 1.320 ms 
+
+::1 - - [21/Mar/2025:19:24:54 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.216 ms 
+
+::1 - - [21/Mar/2025:19:24:54 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.188 ms 
+
+::1 - - [21/Mar/2025:19:24:54 +0000] "GET /metrica HTTP/1.1" 304 - - 1.248 ms 
+
+::1 - - [21/Mar/2025:19:24:54 +0000] "GET /metrica HTTP/1.1" 304 - - 1.397 ms 
+
+::1 - - [21/Mar/2025:19:25:09 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.129 ms 
+
+::1 - - [21/Mar/2025:19:25:09 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.292 ms 
+
+::1 - - [21/Mar/2025:19:25:09 +0000] "GET /metrica HTTP/1.1" 304 - - 1.600 ms 
+
+::1 - - [21/Mar/2025:19:25:09 +0000] "GET /metrica HTTP/1.1" 304 - - 1.742 ms 
+
+::1 - - [21/Mar/2025:19:25:14 +0000] "GET /metrica HTTP/1.1" 304 - - 1.924 ms 
+
+::1 - - [21/Mar/2025:19:25:14 +0000] "GET /metrica HTTP/1.1" 304 - - 1.766 ms 
+
+::1 - - [21/Mar/2025:19:25:20 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.228 ms 
+
+::1 - - [21/Mar/2025:19:25:20 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.211 ms 
+
+::1 - - [21/Mar/2025:19:25:20 +0000] "GET /metrica HTTP/1.1" 304 - - 1.929 ms 
+
+::1 - - [21/Mar/2025:19:25:20 +0000] "GET /metrica HTTP/1.1" 304 - - 2.119 ms 
+
+::1 - - [21/Mar/2025:19:25:29 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.209 ms 
+
+::1 - - [21/Mar/2025:19:25:29 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.154 ms 
+
+::1 - - [21/Mar/2025:19:25:29 +0000] "GET /metrica HTTP/1.1" 304 - - 1.128 ms 
+
+::1 - - [21/Mar/2025:19:25:29 +0000] "GET /metrica HTTP/1.1" 304 - - 1.103 ms 
+
+::1 - - [21/Mar/2025:19:27:28 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.139 ms 
+
+::1 - - [21/Mar/2025:19:27:28 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.168 ms 
+
+::1 - - [21/Mar/2025:19:27:28 +0000] "GET /metrica HTTP/1.1" 304 - - 1.095 ms 
+
+::1 - - [21/Mar/2025:19:27:28 +0000] "GET /metrica HTTP/1.1" 304 - - 0.999 ms 
+
+::1 - - [21/Mar/2025:19:27:57 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 2.570 ms 
+
+::1 - - [21/Mar/2025:19:27:57 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.364 ms 
+
+::1 - - [21/Mar/2025:19:27:57 +0000] "GET /metrica HTTP/1.1" 500 32 - 10.441 ms 
+
+::1 - - [21/Mar/2025:19:27:57 +0000] "GET /metrica HTTP/1.1" 500 32 - 0.795 ms 
+
+::1 - - [21/Mar/2025:19:28:05 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.271 ms 
+
+::1 - - [21/Mar/2025:19:28:05 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.189 ms 
+
+::1 - - [21/Mar/2025:19:28:05 +0000] "GET /metrica HTTP/1.1" 500 32 - 0.909 ms 
+
+::1 - - [21/Mar/2025:19:28:05 +0000] "GET /metrica HTTP/1.1" 500 32 - 1.103 ms 
+
+::1 - - [21/Mar/2025:19:28:35 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 1.837 ms 
+
+::1 - - [21/Mar/2025:19:28:35 +0000] "GET /metrica HTTP/1.1" 200 122 - 12.129 ms 
+
+::1 - - [21/Mar/2025:19:28:35 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.355 ms 
+
+::1 - - [21/Mar/2025:19:28:35 +0000] "GET /metrica HTTP/1.1" 304 - - 1.176 ms 
+
+::1 - - [21/Mar/2025:19:30:01 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 2.691 ms 
+
+::1 - - [21/Mar/2025:19:30:01 +0000] "GET /metrica HTTP/1.1" 200 122 - 13.814 ms 
+
+::1 - - [21/Mar/2025:19:30:01 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.498 ms 
+
+::1 - - [21/Mar/2025:19:30:01 +0000] "GET /metrica HTTP/1.1" 304 - - 1.846 ms 
+
+::1 - - [21/Mar/2025:21:19:21 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 1.658 ms 
+
+::1 - - [21/Mar/2025:21:19:21 +0000] "GET /metrica HTTP/1.1" 200 122 - 10.830 ms 
+
+::1 - - [21/Mar/2025:21:19:21 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.189 ms 
+
+::1 - - [21/Mar/2025:21:19:21 +0000] "GET /metrica HTTP/1.1" 304 - - 1.291 ms 
+
+::1 - - [21/Mar/2025:21:19:38 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 1.358 ms 
+
+::1 - - [21/Mar/2025:21:19:38 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.268 ms 
+
+::1 - - [21/Mar/2025:21:19:38 +0000] "GET /metrica HTTP/1.1" 200 118 - 11.028 ms 
+
+::1 - - [21/Mar/2025:21:19:38 +0000] "GET /metrica HTTP/1.1" 304 - - 1.550 ms 
+
+::1 - - [21/Mar/2025:21:19:47 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 1.345 ms 
+
+::1 - - [21/Mar/2025:21:19:47 +0000] "OPTIONS /metrica HTTP/1.1" 204 0 - 0.656 ms 
+
+::1 - - [21/Mar/2025:21:19:47 +0000] "GET /metrica HTTP/1.1" 200 122 - 8.584 ms 
+
+::1 - - [21/Mar/2025:21:19:47 +0000] "GET /metrica HTTP/1.1" 304 - - 1.353 ms 
+

@@ -57,7 +57,9 @@ async function executarConsulta() {
       */
     // Opcional: salvar os resultados em um arquivo
     const fs = require('fs');
-    fs.writeFileSync('resultados_consulta.json', JSON.stringify(resultados, null, 2));
+    // fs.writeFileSync('resultados_consulta.json', JSON.stringify(resultados, null, 2));
+    
+    fs.writeFileSync('./src/dataresultados_consulta.json', JSON.stringify(resultados, null, 2));
     // console.log('Resultados salvos em resultados_consulta.json');
     
     return resultados;
