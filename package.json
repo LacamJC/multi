@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "nodemon server",
-    "sql": "node mssqlconect"
+    "sql": "node mssqlconect",
+    "start": "node index"
   },
   "dependencies": {
     "cors": "^2.8.5",
