@@ -10,7 +10,8 @@ const fs = require("fs")
 const routes = require("./src/routes")
 const app = express()
 
-const chave = "a92mf83n2mfkb83nHj"
+const chave = process.env.API_KEY
+
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
@@ -20,14 +21,14 @@ const limiter = rateLimit({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
-    flags: "a",
-});
-app.use(
-    morgan(":remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length] - :response-time ms \n", {
-        stream: accessLogStream,
-    })
-);
+// const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
+//     flags: "a",
+// });
+// app.use(
+//     morgan(":remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length] - :response-time ms \n", {
+//         stream: accessLogStream,
+//     })
+// );
 
 
 app.use(cors())
@@ -37,7 +38,7 @@ app.use(morgan("dev"))
 app.use(limiter)
 app.use(authenticatReq)
 app.use("/", routes)
-app.get("/", (req, res) => { res.send("OF") })
+app.get("/", (req, res) => { res.send("Entre em contato com @LacamJC para mais informações") })
 
 
 
