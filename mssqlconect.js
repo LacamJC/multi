@@ -1,5 +1,5 @@
 const { Sequelize, QueryTypes } = require('sequelize');
-
+const { spawn } = require('child_process');
 // Configuração da conexão
 const sequelize = new Sequelize('PROTHEUS', 'protheus', '12345678', {
   dialect: 'mssql',
@@ -73,11 +73,26 @@ async function executarConsulta() {
   }
 }
 
+function executarComandoSpawn(comando, args) {
+  const processo = spawn(comando, args);
+
+  processo.stdout.on('data', (data) => {
+    console.log(`Saída do comando:\n${data}`);
+  });
+
+  processo.stderr.on('data', (data) => {
+    console.error(`Erros (stderr):\n${data}`);
+  });
+
+  processo.on('close', (codigo) => {
+    console.log(`Processo finalizado com código ${codigo}`);
+  });
+}
+
 // Executa a função
 executarConsulta()
   .then(resultados => {
-    // Aqui você pode fazer qualquer processamento adicional com os resultados
-    // Por exemplo, transformar os dados ou realizar cálculos
+    executarComandoSpawn("npm run dev", [])
   })
   .catch(erro => {
     console.error('Falha na execução:', erro);
