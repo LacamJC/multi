@@ -21,7 +21,7 @@ const limiter = rateLimit({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
+const accessLogStream = fs.createWriteStream(path.join(__dirname, "./src/log/log.txt"), {
     flags: "a",
 });
 app.use(

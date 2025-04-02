@@ -59,7 +59,7 @@ async function executarConsulta() {
     const fs = require('fs');
     // fs.writeFileSync('resultados_consulta.json', JSON.stringify(resultados, null, 2));
     
-    fs.writeFileSync('./src/dataresultados_consulta.json', JSON.stringify(resultados, null, 2));
+    fs.writeFileSync('./src/data/resultados_consulta.json', JSON.stringify(resultados, null, 2));
     // console.log('Resultados salvos em resultados_consulta.json');
     
     return resultados;
@@ -73,26 +73,12 @@ async function executarConsulta() {
   }
 }
 
-function executarComandoSpawn(comando, args) {
-  const processo = spawn(comando, args);
 
-  processo.stdout.on('data', (data) => {
-    console.log(`Saída do comando:\n${data}`);
-  });
-
-  processo.stderr.on('data', (data) => {
-    console.error(`Erros (stderr):\n${data}`);
-  });
-
-  processo.on('close', (codigo) => {
-    console.log(`Processo finalizado com código ${codigo}`);
-  });
-}
 
 // Executa a função
 executarConsulta()
   .then(resultados => {
-    executarComandoSpawn("npm run dev", [])
+    
   })
   .catch(erro => {
     console.error('Falha na execução:', erro);
