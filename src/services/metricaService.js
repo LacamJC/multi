@@ -22,14 +22,14 @@ exports.getData = () => {
 
 
             if (registro.fatura == "1") {
-                console.log(`
+                // console.log(`
 
-                        Analista: ${registro.nomeUsuario}
-                        Esforço: ${registro.esforco}
-                        Valor hora: ${registro.valorHora}
-                        A pagar: ${registro.valorHora * registro.esforco}
-                        Faturavel: ${registro.esforco * registro.valorA1}
-                    `)
+                //         Analista: ${registro.nomeUsuario}
+                //         Esforço: ${registro.esforco}
+                //         Valor hora: ${registro.valorHora}
+                //         A pagar: ${registro.valorHora * registro.esforco}
+                //         Faturavel: ${registro.esforco * registro.valorA1}
+                //     `)
             }
 
         })
@@ -51,7 +51,7 @@ exports.getData = () => {
             } else {
                 if (registro.fatura == "1") {
                     valor_dev += (registro.esforco * registro.valorA1)
-                    console.log(`A pagar: ${registro.esforco * registro.valorA1}`)
+                    // console.log(`A pagar: ${registro.esforco * registro.valorA1}`)
                 }
             }
         })

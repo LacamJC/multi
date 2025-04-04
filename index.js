@@ -14,10 +14,12 @@ const chave = process.env.API_KEY
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 10000000,
     message: "Muitas requisições feitas deste IP, tente novamente mais tarde."
 })
 
+
+app.use(cors({origin: '*'}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -30,8 +32,6 @@ app.use(
     })
 );
 
-
-app.use(cors())
 app.use(morgan("dev"))
 
 
@@ -46,9 +46,10 @@ app.get("/", (req, res) => { res.send("Entre em contato com @LacamJC para mais i
 function authenticatReq(req, res, next) {
     const api_req = req.headers['token']
 
-    if (!api_req || api_req !== chave) {
-        return res.status(401).json({ hasPermission: false, message: "Falta de credenciais para acessar" })
-    }
+    // if (!api_req || api_req !== chave) {
+    //     return res.status(401).json({ hasPermission: false, message: "Falta de credenciais para acessar" })
+    // }
+    console.log("Alguem tentou acessar")
 
     next()
 }
