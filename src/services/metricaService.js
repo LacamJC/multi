@@ -1,6 +1,7 @@
 const { fetchJson } = require("../utils/functions")
 const { filtrarPorEstado } = require("../utils/filters")
 const { converterHoras } = require("../utils/delta")
+const { executarConsulta } = require("../services/mssqlconect")
 exports.getData = () => {
     const data = fetchJson()
 
@@ -95,6 +96,7 @@ exports.getDataByMonth = (mounth) => {
       ];
       
     const mesSelecionado = meses.find(m => m.valor == mounth)
+    executarConsulta(mesSelecionado)
 
     return mesSelecionado
 }

@@ -50,13 +50,28 @@ const consultaSQL2 = (dataInicio, dataFim) => {
 };
 
 // Função para executar a consulta
-async function executarConsulta() {
+async function executarConsulta(mes) {
   try {
-    // Primeiro testa a conexão
-    await sequelize.authenticate();
-    console.log('Conexão com o MS SQL Server estabelecida com sucesso.');
+    // console.log(mes)
+    var DI // Data inicial 
+    var DF // Data final
+    if (mes) {
+      DI = mes.dataInicio
+      DF = mes.dataFim
+      // console.log("Mes diferente")
+    }else{
+      DI = dataInicio
+      DF = dataFim
+      // console.log("Mes atual")
+    }
 
-    const sql = consultaSQL2(dataInicio,dataFim);
+
+    // Primeiro testa a conexão
+    // await sequelize.authenticate();
+    console.log('Conexão com o MS SQL Server estabelecida com sucesso.');
+    // console.log(dataInicio)
+    // console.log(dataFim)
+    const sql = consultaSQL2(DI, DF);
     // Executa a consulta SQL
     const resultados = await sequelize.query(sql, {
       type: QueryTypes.SELECT
