@@ -73,7 +73,7 @@ async function executarConsulta(mes) {
     // console.log(dataFim)
     const sql = consultaSQL2(DI, DF);
     // Executa a consulta SQL
-    const resultados = await sequelize.query(sql, {
+         const resultados = await sequelize.query(sql, {
       type: QueryTypes.SELECT
     });
 
