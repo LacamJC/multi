@@ -44,15 +44,23 @@ exports.getData = () => {
 
         data.forEach((registro) => {
             // console.log(registro)
-            if (registro.tipoTarefa == "S") {
+            // if (registro.tipoTarefa == "S") {
 
-                if (registro.fatura == "1") {
+            //     if (registro.fatura == "1") {
+            //         valor += (registro.esforco * registro.valorA1)
+            //     }
+            // } else {
+            //     if (registro.fatura == "1") {
+            //         valor_dev += (registro.esforco * horasDesenvolvimentoA1)
+            //         // console.log(`A pagar: ${registro.esforco * registro.valorA1}`)
+            //     }
+            // }
+            if(registro.fatura == "1"){
+                if(registro.tipoTarefa == "S"){
                     valor += (registro.esforco * registro.valorA1)
                 }
-            } else {
-                if (registro.fatura == "1") {
-                    valor_dev += (registro.esforco * registro.valorA1)
-                    // console.log(`A pagar: ${registro.esforco * registro.valorA1}`)
+                if(registro.tipoTarefa == "D"){
+                    valor += (registro.esforco * registro.horasDesenvolvimentoA1)
                 }
             }
         })
@@ -96,7 +104,7 @@ exports.getDataByMonth = (mounth) => {
       ];
       
     const mesSelecionado = meses.find(m => m.valor == mounth)
-    executarConsulta(mesSelecionado)
+    const data = executarConsulta(mesSelecionado)
 
-    return mesSelecionado
+    return data
 }

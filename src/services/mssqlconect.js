@@ -3,8 +3,8 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const dataInicio = 20250401
-const dataFim = 20250401;
+const _dataInicio = 20250401
+const _dataFim = 20250431;
 
 // Configuração da conexão
 const sequelize = new Sequelize('PROTHEUS', 'protheus', '12345678', {
@@ -28,8 +28,8 @@ const consultaSQL = `
   LEFT JOIN SA1990 AS SA1 ON A1_COD = ZAD_CLIENT AND SA1.D_E_L_E_T_=''
   LEFT JOIN ZAC990 AS ZAC ON ZAD_PROJET = ZAC_PROJET AND ZAD_NUMTAR = ZAC_TAREF AND ZAC.D_E_L_E_T_=''
   WHERE ZAD.D_E_L_E_T_=''
-    AND ZAD_DTINI >= '${dataInicio}'
-    AND ZAD_DTFIM <= '${dataFim}'
+    AND ZAD_DTINI >= '${_dataInicio}'
+    AND ZAD_DTFIM <= '${_dataFim}'
     AND ZAD_CODUS BETWEEN '   ' AND  'ZZZZZZ'
   ORDER BY ZAD_NUM, ZAD_NOME,ZAD_PROJET
 `;
@@ -60,11 +60,18 @@ async function executarConsulta(mes) {
       DF = mes.dataFim
       // console.log("Mes diferente")
     }else{
-      DI = dataInicio
-      DF = dataFim
+      DI = _dataInicio
+      DF = _dataFim
       // console.log("Mes atual")
     }
 
+    console.log(`
+      
+        Executando consulta em 
+        
+        ${DI}
+        ${DF}
+      `)
 
     // Primeiro testa a conexão
     // await sequelize.authenticate();

@@ -1,0 +1,21 @@
+aumentar a fonte em telas maiores <- Feito 
+
+Alinhas os cards em telas maiores <- Feito 
+
+
+FORMATAR TO LOCALE STRING BRL nos valores <- Feito
+
+LOGICA DE FATURAMENTO  
+
+	SE ZAC_FATURA == "1"
+		SE ZAD_TIPO == "S" 
+			A1_VALOR * ZAD_ESFORC
+		SE ZAD_TIPO == "D"
+			HR_DEV * ZAD_ESFORC
+
+INSERIR LOGICA
+
+// 1 Hora trabalhada nas atualizações atuais
+	
+ATUALIZACAO DE MES POR ESCOLHA
+

@@ -23,14 +23,14 @@ app.use(cors({origin: '*'}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, "./src/log/log.txt"), {
-    flags: "a",
-});
-app.use(
-    morgan(":remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length] - :response-time ms \n", {
-        stream: accessLogStream,
-    })
-);
+// const accessLogStream = fs.createWriteStream(path.join(__dirname, "./src/log/log.txt"), {
+//     flags: "a",
+// });
+// app.use(
+//     morgan(":remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length] - :response-time ms \n", {
+//         stream: accessLogStream,
+//     })
+// );
 
 app.use(morgan("dev"))
 
