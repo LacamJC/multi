@@ -3,6 +3,9 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const dataInicio = 20250401
+const dataFim = 20250401;
+
 // Configuração da conexão
 const sequelize = new Sequelize('PROTHEUS', 'protheus', '12345678', {
   dialect: 'mssql',
@@ -25,21 +28,52 @@ const consultaSQL = `
   LEFT JOIN SA1990 AS SA1 ON A1_COD = ZAD_CLIENT AND SA1.D_E_L_E_T_=''
   LEFT JOIN ZAC990 AS ZAC ON ZAD_PROJET = ZAC_PROJET AND ZAD_NUMTAR = ZAC_TAREF AND ZAC.D_E_L_E_T_=''
   WHERE ZAD.D_E_L_E_T_=''
-    AND ZAD_DTINI >= '20250401'
-    AND ZAD_DTFIM <= '20250430'
+    AND ZAD_DTINI >= '${dataInicio}'
+    AND ZAD_DTFIM <= '${dataFim}'
     AND ZAD_CODUS BETWEEN '   ' AND  'ZZZZZZ'
   ORDER BY ZAD_NUM, ZAD_NOME,ZAD_PROJET
 `;
 
-// Função para executar a consulta
-async function executarConsulta() {
-  try {
-    // Primeiro testa a conexão
-    await sequelize.authenticate();
-    console.log('Conexão com o MS SQL Server estabelecida com sucesso.');
+const consultaSQL2 = (dataInicio, dataFim) => {
+  return `
+    SELECT ZAD_NUM, ZAD_CODUS,ZAD_NOME,ZAD_PROJET,ZAD_NUMTAR,ZAD_DESCR,ZAD_TIPO,ZAD_DTINI,ZAD_DTFIM, ZAD_ESFOR, ZAD_NOMCLI, ZAA_COD, ZAA_NOME, ZAA_VALHOR,A1_VALOR,A1_HRDEV, ZAC_FATURA,A1_PARCEIR
+    FROM ZAD990 ZAD
+    LEFT JOIN ZAA990 AS ZAA ON ZAD_CODUS = ZAA_COD AND ZAA.D_E_L_E_T_=''
+    LEFT JOIN SA1990 AS SA1 ON A1_COD = ZAD_CLIENT AND SA1.D_E_L_E_T_=''
+    LEFT JOIN ZAC990 AS ZAC ON ZAD_PROJET = ZAC_PROJET AND ZAD_NUMTAR = ZAC_TAREF AND ZAC.D_E_L_E_T_=''
+    WHERE ZAD.D_E_L_E_T_=''
+      AND ZAD_DTINI >= '${dataInicio}'
+      AND ZAD_DTFIM <= '${dataFim}'
+      AND ZAD_CODUS BETWEEN '   ' AND  'ZZZZZZ'
+    ORDER BY ZAD_NUM, ZAD_NOME,ZAD_PROJET
+  `;
+};
 
+// Função para executar a consulta
+async function executarConsulta(mes) {
+  try {
+    // console.log(mes)
+    var DI // Data inicial 
+    var DF // Data final
+    if (mes) {
+      DI = mes.dataInicio
+      DF = mes.dataFim
+      // console.log("Mes diferente")
+    }else{
+      DI = dataInicio
+      DF = dataFim
+      // console.log("Mes atual")
+    }
+
+
+    // Primeiro testa a conexão
+    // await sequelize.authenticate();
+    console.log('Conexão com o MS SQL Server estabelecida com sucesso.');
+    // console.log(dataInicio)
+    // console.log(dataFim)
+    const sql = consultaSQL2(DI, DF);
     // Executa a consulta SQL
-    const resultados = await sequelize.query(consultaSQL, {
+         const resultados = await sequelize.query(sql, {
       type: QueryTypes.SELECT
     });
 

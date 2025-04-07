@@ -10,8 +10,15 @@ const authenticatReq = require("../../index.js")
 const { executarConsulta } = require('../services/mssqlconect.js')
 // router.get("/", reqController.getInfo)
 router.get("/metrica", metricaController.getData)
+router.get('/mes/:month', metricaController.getDataByMonth)
 router.get('/analistas', analistaController.getData)
 router.get('/clientes', clienteController.getData)
+
+
+
+
+
+
 router.get('/sql', (req,res)=>{
     // const message = sqlAtt()
     sqlAtt()
