@@ -17,7 +17,7 @@ const sequelize = new Sequelize('PROTHEUS', 'protheus', '12345678', {
       trustServerCertificate: false, // Se estiver usando um certificado autoassinado
     },
   },
-  logging: false // Removi o console.log para não poluir ao importar
+  logging: true // Removi o console.log para não poluir ao importar
 });
 
 // Consulta SQL

@@ -3,7 +3,7 @@ const { filtrarPorEstado } = require("../utils/filters")
 
 exports.getInfo = () => {
     const data = fetchJson()
-    console.log(data[0])
+    // console.log(data[0])
 
 
     var funcionarios = []

@@ -18,7 +18,7 @@ exports.getData = () => {
             var filter_data = filtrarPorEstado(data, filtro)
             let campos = "nomeUsuario,esforco,valorHora,valorA1,horasDesenvolvimentoA1,fatura"
             var filter_camp = filtrarCampos(data, campos)
-            console.log(filter_camp)
+            // console.log(filter_camp)
             let a_pagar = 0
             filter_camp.forEach((caso)=>{
                 if(caso.nomeUsuario == analista)
@@ -43,7 +43,7 @@ exports.getData = () => {
 
         return message
     }
-    console.log(analistas())
+    // console.log(analistas())
 
     return analistas()
     // console.log(analistas())
