@@ -80,7 +80,8 @@ exports.getData = () => {
     const message = {
         total_horas_apontadas: horas_apontadas(),
         a_pagar_analistas: valor_a_pagar_analistas(),
-        fatoramento: valor_a_faturar()
+        fatoramento: valor_a_faturar(),
+        registros: data.length
     }
 
 
@@ -89,22 +90,54 @@ exports.getData = () => {
 
 exports.getDataByMonth = (mounth) => {
     const meses = [
-        { mes: "Janeiro", valor: 0, dataInicio: 20250101, dataFim: 20250131 },
-        { mes: "Fevereiro", valor: 1, dataInicio: 20250201, dataFim: 20250228 },
-        { mes: "Março", valor: 2, dataInicio: 20250301, dataFim: 20250331 },
-        { mes: "Abril", valor: 3, dataInicio: 20250401, dataFim: 20250430 },
-        { mes: "Maio", valor: 4, dataInicio: 20240501, dataFim: 20240531 },
-        { mes: "Junho", valor: 5, dataInicio: 20240601, dataFim: 20240630 },
-        { mes: "Julho", valor: 6, dataInicio: 20240701, dataFim: 20240731 },
-        { mes: "Agosto", valor: 7, dataInicio: 20240801, dataFim: 20240831 },
-        { mes: "Setembro", valor: 8, dataInicio: 20240901, dataFim: 20240930 },
-        { mes: "Outubro", valor: 9, dataInicio: 20241001, dataFim: 20241031 },
-        { mes: "Novembro", valor: 10, dataInicio: 20241101, dataFim: 20241130 },
-        { mes: "Dezembro", valor: 11, dataInicio: 20241201, dataFim: 20241231 }
+        { mes: "Janeiro", valor: 0, ano: 2024, dataInicio: 20240101, dataFim: 20240131 },
+        { mes: "Fevereiro", valor: 1, ano: 2024, dataInicio: 20240201, dataFim: 20240229 }, // 2024 é ano bissexto
+        { mes: "Março", valor: 2, ano: 2024, dataInicio: 20240301, dataFim: 20240331 },
+        { mes: "Abril", valor: 3, ano: 2024, dataInicio: 20240401, dataFim: 20240430 },
+        { mes: "Maio", valor: 4, ano: 2024, dataInicio: 20240501, dataFim: 20240531 },
+        { mes: "Junho", valor: 5, ano: 2024, dataInicio: 20240601, dataFim: 20240630 },
+        { mes: "Julho", valor: 6, ano: 2024, dataInicio: 20240701, dataFim: 20240731 },
+        { mes: "Agosto", valor: 7, ano: 2024, dataInicio: 20240801, dataFim: 20240831 },
+        { mes: "Setembro", valor: 8, ano: 2024, dataInicio: 20240901, dataFim: 20240930 },
+        { mes: "Outubro", valor: 9, ano: 2024, dataInicio: 20241001, dataFim: 20241031 },
+        { mes: "Novembro", valor: 10, ano: 2024, dataInicio: 20241101, dataFim: 20241130 },
+        { mes: "Dezembro", valor: 11, ano: 2024, dataInicio: 20241201, dataFim: 20241231 },
+        { mes: "Janeiro", valor: 12, ano: 2025,  dataInicio: 20250101, dataFim: 20250131 },
+        { mes: "Fevereiro", valor: 13, ano: 2025, dataInicio: 20250201, dataFim: 20250228 },
+        { mes: "Março", valor: 14, ano: 2025, dataInicio: 20250301, dataFim: 20250331 },
+        { mes: "Abril", valor: 15, ano: 2025, dataInicio: 20250401, dataFim: 20250430 }
       ];
-      
+      if (mounth === undefined || mounth === null || mounth.length === 0 || isNaN(parseInt(mounth)) || parseInt(mounth) < 0) {
+        return { message: "Mês inválido. Por favor, forneça um número entre 0 e 11." };
+    }
+    
     const mesSelecionado = meses.find(m => m.valor == mounth)
+    console.log(mesSelecionado)
     const data = executarConsulta(mesSelecionado)
+    console.log(data.length)
+    console.log(`
+        
+            DADOS DO RESULTADO 
 
+            ${data.length}
+        
+            ` )
+    
+    const res = fetchJson()
+    setTimeout(()=>{
+        if(res){
+            console.log(`
+                
+                    Dados encontrados na nova data
+
+                    `)
+        }else{
+            console.log(`
+
+                nenhum dado encontrado
+
+                    `)
+        }
+    },1000)
     return data
 }

@@ -58,11 +58,19 @@ async function executarConsulta(mes) {
     if (mes) {
       DI = mes.dataInicio
       DF = mes.dataFim
-      // console.log("Mes diferente")
+      console.log(`
+        
+        Mes diferente
+        
+        `)
     }else{
       DI = _dataInicio
       DF = _dataFim
-      // console.log("Mes atual")
+      console.log(`
+        
+          Mes atual
+        
+        `)
     }
 
     console.log(`

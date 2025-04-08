@@ -15,7 +15,14 @@ router.get('/analistas', analistaController.getData)
 router.get('/clientes', clienteController.getData)
 
 
-
+router.get('/teste', (req,res) => {
+    const message = {
+        total_horas_apontadas: 0,
+        a_pagar_analistas: 0,
+        fatoramento: 0
+    }
+    res.json(message)
+})
 
 
 
