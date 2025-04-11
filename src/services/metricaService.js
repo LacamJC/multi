@@ -113,6 +113,7 @@ exports.getDataByMonth = (mounth) => {
     
     const mesSelecionado = meses.find(m => m.valor == mounth)
     console.log(mesSelecionado)
+    
     const data = executarConsulta(mesSelecionado)
     console.log(data.length)
     console.log(`

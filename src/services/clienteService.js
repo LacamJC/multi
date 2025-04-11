@@ -1,5 +1,6 @@
 const { fetchJson } = require('../utils/functions')
 const { filtrarCampos } = require('../utils/filters')
+const { converterHoras } = require("../utils/delta")
 exports.getData = () =>{
     const data = fetchJson()
 
@@ -18,6 +19,7 @@ exports.getData = () =>{
             // console.log(filter_camp)
             let a_faturar = 0
             let cont = 0
+            let horas_apontadas = 0
 
             filter_camp.forEach((caso) => {
                 if(caso.nomeCliente == cliente)
@@ -35,6 +37,9 @@ exports.getData = () =>{
                             cont++;
                         }
                     }
+
+                    // console.log(caso.esforco)
+                    horas_apontadas += Number(caso.esforco)
                 }
                 
             })
@@ -42,12 +47,16 @@ exports.getData = () =>{
             let res = {
                 cliente : cliente.trim(),
                 a_faturar : a_faturar,
-                qtd_chamados : cont
+                qtd_chamados : cont,
+                horas_apontadas : converterHoras(horas_apontadas)
             }
 
             message.push(res)
 
         })
+
+        message.sort((a, b) => a.cliente.localeCompare(b.cliente))
+        //arrayDeObjetos.sort((a, b) => a.nome.localeCompare(b.nome));
 
         return message
     }   
