@@ -12,7 +12,7 @@ const chaveMapeamento = {
     "ZAD_DTINI": "dataInicio",
     "ZAD_DTFIM": "dataFim",
     "ZAD_ESFOR": "esforco",
-    "ZAD_NOMCLI": "nomeCliente",
+    "A1_NREDUZ": "nomeCliente",
     "ZAA_COD": "codigoUsuarioAprovador",
     "ZAA_NOME": "nomeUsuarioAprovador",
     "ZAA_VALHOR": "valorHora",

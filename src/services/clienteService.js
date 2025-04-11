@@ -23,6 +23,7 @@ exports.getData = () =>{
 
             filter_camp.forEach((caso) => {
                 if(caso.nomeCliente == cliente)
+                    
                 {
                     if(caso.tipoTarefa == "S"){
                         if(caso.fatura == "1"){
@@ -45,7 +46,7 @@ exports.getData = () =>{
             })
 
             let res = {
-                cliente : cliente.trim(),
+                cliente : cliente.toString().trim(),
                 a_faturar : a_faturar,
                 qtd_chamados : cont,
                 horas_apontadas : converterHoras(horas_apontadas)
