@@ -7,10 +7,10 @@ const dataInicio = 20250401
 const dataFim = 20250401;
 
 // Configuração da conexão
-const sequelize = new Sequelize('PROTHEUS', 'protheus', '12345678', {
+const sequelize = new Sequelize(process.env.BD_NAME, process.env.BD_USER, process.env.BD_PASSWORD, {
   dialect: 'mssql',
   host: 'localhost',
-  port: 1433, // Porta padrão do MS SQL Server
+  port: process.env.BD_PORT, // Porta padrão do MS SQL Server
   dialectOptions: {
     options: {
       encrypt: false, // Para conexões seguras
