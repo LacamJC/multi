@@ -91,7 +91,7 @@ exports.getData = () => {
 exports.getDataByMonth = (mounth) => {
     const meses = [
         { mes: "Janeiro", valor: 0, ano: 2024, dataInicio: 20240101, dataFim: 20240131 },
-        { mes: "Fevereiro", valor: 1, ano: 2024, dataInicio: 20240201, dataFim: 20240229 }, // 2024 é ano bissexto
+        { mes: "Fevereiro", valor: 1, ano: 2024, dataInicio: 20240201, dataFim: 20240229 },
         { mes: "Março", valor: 2, ano: 2024, dataInicio: 20240301, dataFim: 20240331 },
         { mes: "Abril", valor: 3, ano: 2024, dataInicio: 20240401, dataFim: 20240430 },
         { mes: "Maio", valor: 4, ano: 2024, dataInicio: 20240501, dataFim: 20240531 },
@@ -102,11 +102,17 @@ exports.getDataByMonth = (mounth) => {
         { mes: "Outubro", valor: 9, ano: 2024, dataInicio: 20241001, dataFim: 20241031 },
         { mes: "Novembro", valor: 10, ano: 2024, dataInicio: 20241101, dataFim: 20241130 },
         { mes: "Dezembro", valor: 11, ano: 2024, dataInicio: 20241201, dataFim: 20241231 },
-        { mes: "Janeiro", valor: 12, ano: 2025,  dataInicio: 20250101, dataFim: 20250131 },
+        { mes: "Janeiro", valor: 12, ano: 2025, dataInicio: 20250101, dataFim: 20250131 },
         { mes: "Fevereiro", valor: 13, ano: 2025, dataInicio: 20250201, dataFim: 20250228 },
         { mes: "Março", valor: 14, ano: 2025, dataInicio: 20250301, dataFim: 20250331 },
-        { mes: "Abril", valor: 15, ano: 2025, dataInicio: 20250401, dataFim: 20250430 }
+        { mes: "Abril", valor: 15, ano: 2025, dataInicio: 20250401, dataFim: 20250430 },
+        { mes: "Maio", valor: 16, ano: 2025, dataInicio: 20250501, dataFim: 20250531 },
+        { mes: "Junho", valor: 17, ano: 2025, dataInicio: 20250601, dataFim: 20250630 },
+        { mes: "Julho", valor: 18, ano: 2025, dataInicio: 20250701, dataFim: 20250731 },
+        { mes: "Agosto", valor: 19, ano: 2025, dataInicio: 20250801, dataFim: 20250831 },
+        { mes: "Setembro", valor: 20, ano: 2025, dataInicio: 20250901, dataFim: 20250930 }
       ];
+      
       if (mounth === undefined || mounth === null || mounth.length === 0 || isNaN(parseInt(mounth)) || parseInt(mounth) < 0) {
         return { message: "Mês inválido. Por favor, forneça um número entre 0 e 11." };
     }

@@ -44,19 +44,28 @@ exports.getData = () =>{
                 }
                 
             })
+            console.log(cliente + typeof(cliente))
+            if(cliente != null || cliente != undefined)
+            {
 
-            let res = {
-                cliente : cliente.toString().trim(),
-                a_faturar : a_faturar,
-                qtd_chamados : cont,
-                horas_apontadas : converterHoras(horas_apontadas)
+                let res = {
+                    cliente : cliente.toString().trim(),
+                    a_faturar : a_faturar,
+                    qtd_chamados : cont,
+                    horas_apontadas : converterHoras(horas_apontadas)
+                }
+    
+                message.push(res)
+    
+            }else{
+                console.log(`
+                        DADOS DO JSON INVÁLIDOS PARA ANALISE, POR FAVOR VERIFIQUE A INTEGRIDADE DO ARQUIVO
+                    
+                    `)
             }
-
-            message.push(res)
-
         })
 
-        message.sort((a, b) => a.cliente.localeCompare(b.cliente))
+        // message.sort((a, b) => a.cliente.localeCompare(b.cliente))
         //arrayDeObjetos.sort((a, b) => a.nome.localeCompare(b.nome));
 
         return message
